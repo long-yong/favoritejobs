@@ -5,15 +5,13 @@
 
   <a class='underline' (click)="clickSort()">Sort Type</a>
 
-  <br><br>
+  <br><br><br>
   
-  <div id='box'>
-
     <table border='1'>
         <tr>
           <th  width="120">Name</th>
           <th  width="100">Type</th>
-          <th  width="150">Action</th>
+          <th  width="115">Action</th>
         </tr>
   
         <tr *ngFor='let obj of allObj'>
@@ -24,14 +22,13 @@
             {{obj.type}}
           </td>
           <td>
-              <button class='inline' (click)="clickView(obj._id)"> &nbsp; Detail &nbsp; </button>
-              <button class='inline' (click)="clickEdit(obj._id)"> &nbsp; Edit &nbsp; </button>
-              <button class='inline' (click)="clickDel(obj._id)"> &nbsp; Delete &nbsp; </button>
+              <button class='inline' (click)="clickView(obj._id)"> Detail </button>
+              <button class='inline' (click)="clickEdit(obj._id)"> Edit </button>
+              <button class='inline' (click)="clickDel(obj._id)"> Del  </button>
           </td>
         </tr>
   
       </table>
       
-  </div>
 
 </div>
