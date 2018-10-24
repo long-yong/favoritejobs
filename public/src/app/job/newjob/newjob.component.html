@@ -1,0 +1,44 @@
+<div id='container'>
+  
+  <h2>Add a favorite job</h2>
+  <a [routerLink]="['/job']">Home</a>
+
+  <br><br>
+
+  <div id='box'>
+
+    <br>
+
+    <a class='errs' *ngFor='let err of formErr'> {{err}} <br> </a> <br>
+  
+    <form class='inline' (submit)="onSubmitNew()">
+    
+      Name:<br>
+      <input type="text" name="formBody.name" [(ngModel)]="formBody.name"/> <br><br>
+     
+     Type:<br>
+     <input type="text" name="formBody.type" [(ngModel)]="formBody.type"/> <br><br>
+     
+     Description:<br>
+     <input type="text" name="formBody.description" [(ngModel)]="formBody.description"/> <br><br>
+     
+     Skills(Optional):<br>
+     <div class='high6'></div><div class='wide20'></div>
+     <input type="text" name="formBody.skill1" [(ngModel)]="formBody.skill1"/> <br>
+     
+     <div class='high6'></div><div class='wide20'></div>
+     <input type="text" name="formBody.skill2" [(ngModel)]="formBody.skill2"/> <br>
+
+     <div class='high6'></div><div class='wide20'>
+     </div><input type="text" name="formBody.skill3" [(ngModel)]="formBody.skill3"/> <br><br>
+     
+     <div class='wide20'></div>
+     <button type="submit">Add a Job</button><div class='wide10'></div>
+     <button type='reset' (click)="clickCancel()">Cancel</button>
+
+    </form>
+
+  </div>
+
+
+</div>

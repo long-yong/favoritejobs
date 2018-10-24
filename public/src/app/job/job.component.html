@@ -1,0 +1,37 @@
+<div id='container'>
+  
+  <h2>Yong's favorite jobs</h2>
+  <a [routerLink]="['/job/newjob']">Add a favorite job</a> <div class='wide20'></div>
+
+  <a class='underline' (click)="clickSort()">Sort Type</a>
+
+  <br><br>
+  
+  <div id='box'>
+
+    <table border='1'>
+        <tr>
+          <th  width="120">Name</th>
+          <th  width="100">Type</th>
+          <th  width="150">Action</th>
+        </tr>
+  
+        <tr *ngFor='let obj of allObj'>
+          <td>
+            {{obj.name}}
+          </td>
+          <td>
+            {{obj.type}}
+          </td>
+          <td>
+              <button class='inline' (click)="clickView(obj._id)"> &nbsp; Detail &nbsp; </button>
+              <button class='inline' (click)="clickEdit(obj._id)"> &nbsp; Edit &nbsp; </button>
+              <button class='inline' (click)="clickDel(obj._id)"> &nbsp; Delete &nbsp; </button>
+          </td>
+        </tr>
+  
+      </table>
+      
+  </div>
+
+</div>

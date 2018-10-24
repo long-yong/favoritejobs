@@ -1,0 +1,158 @@
+Deploy of Mean stack of the petshelter project
+// https://github.com/long-yong/petshelter.git
+
+
+// 1. Set .gitignore under express app dir  &  remove angular .git resp
+.DS_Store
+.idea
+.vagrant
+bootstrap.sh
+VagrantFile
+bower_components/
+node_modules
+package-lock.json
+
+cmd: git init
+cmd: git remote add origin https://github.com/long-yong/petshelter.git
+VSC: commit and push
+
+
+// 2. Create AWS instance
+Ubuntu 16.04 LTS / t2.micro
+Set security settings:
+ssh 0.0.0.0, (Anywhere or myIP)
+http 0.0.0.0 (Anywhere)
+https 0.0.0.0 (Anywhere, or don't set it)
+
+ instance ID: i-0db984a2956d93350
+ DNS: ec2-18-221-110-84.us-east-2.compute.amazonaws.com
+ public IP: 18.221.110.84
+ Private IPs 172.31.37.224
+ Key: aws-pem-rsa
+
+
+
+// 3. Connect to AWS server
+
+cmd (just as user not as adminstrator)
+cmd: cd .ssh
+cmd: bash
+$:  chmod 400 aws-pem-rsa.pem
+$:  ssh -i aws-pem-rsa.pem ubuntu@ec2-18-221-110-84.us-east-2.compute.amazonaws.com
+
+
+
+//4. install dependency
+
+$: sudo apt-get update
+$: sudo apt-get install -y build-essential openssl libssl-dev pkg-config
+
+$: sudo apt-get install -y nodejs nodejs-legacy 
+$: sudo apt-get install npm -y
+$: sudo npm cache clean -f
+
+// Note: In case the first command does not work, 
+// try sudo apt install nodejs-legacy instead.
+
+$: sudo npm install -g n
+$: sudo n stable
+
+$: sudo npm install -g @angular/cli
+
+$: sudo apt-get install nginx git -y
+
+
+
+
+// 5: colone petshelter project
+
+$: cd /var/www
+
+$: sudo git clone https://github.com/long-yong/petshelter.git
+
+
+
+//6  setup NGINX
+
+$: cd /etc/nginx/sites-available
+
+$: sudo vim petshelter     (hotkey: i,esc,wq)
+
+// Add the following code to the file: http://{{PRIVATE-IP}}:{{NODE-PROJECT-PORT}};
+// {{ here is PRIVATE-IP}}:8000
+
+server {
+    listen 80;
+    location / {
+        proxy_pass http://172.31.37.224:8000;  
+        proxy_http_version 1.1;
+        proxy_set_header Upgrade $http_upgrade;
+        proxy_set_header Connection 'upgrade';
+        proxy_set_header Host $host;
+        proxy_cache_bypass $http_upgrade;
+    }
+}
+
+$: sudo rm default
+
+$: sudo ln -s /etc/nginx/sites-available/petshelter /etc/nginx/sites-enabled/petshelter
+
+$: sudo rm /etc/nginx/sites-enabled/default
+
+
+
+
+// 7: Project Dependies and pm2
+
+$: sudo npm install pm2 -g
+
+$: cd /var/www
+$: sudo chown -R ubuntu petshelter
+
+
+$: cd petshelter
+$: npm install    // if err then run $: sudo npm install  
+$: cd public      // angular project name, we usually call it public
+$: npm install    // if err then run $: sudo npm install 
+$: ng build
+
+
+
+
+// 8: MongoDB  // https://docs.mongodb.com/manual/tutorial/install-mongodb-on-ubuntu/#create-a-list-file-for-mongodb
+(current path:  cd /var/www/petshelter/public)
+
+$: sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv 9DA31620334BD75D9DCB49F368818C72E52529D4
+
+$: echo "deb [ arch=amd64,arm64 ] https://repo.mongodb.org/apt/ubuntu xenial/mongodb-org/4.0 multiverse" | sudo tee /etc/apt/sources.list.d/mongodb-org-4.0.list
+
+
+$: sudo apt-get update
+
+$: sudo apt-get install -y mongodb  // if err then run $: sudo apt-get install -y mongodb-org
+
+$: sudo mkdir /data
+
+$: sudo mkdir /data/db
+
+$: sudo service mongod start      // err: unit mongod.service not found
+
+$: sudo service mongod status
+
+$: sudo systemctl enable mongod && sudo systemctl start mongod
+
+
+
+// 9. Start Your server!
+
+$: cd /var/www/petshelter
+
+$: pm2 start server.js
+
+$: sudo service nginx stop && sudo service nginx start
+
+// At this point, you should be able to navigate to your AWS public IP and see your live project!
+// Use pm2 logs to see the logs of your different pm2 instances.
+// pm2 show {{ pm2 instance id }} will give you details of that instance.
+
+
