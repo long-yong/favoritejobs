@@ -22,19 +22,19 @@
           <tr>
             <td>Company</td>
             <td><input class='inp2' type='text' name='formBody.company'    [(ngModel)]='formBody.company'    readonly='readonly'/></td>
-            <td><input class='inp3' type='text' name='formBody.companyUrl' [(ngModel)]='formBody.companyUrl' readonly='readonly'/></td>
+            <td><a href="{{formBody.companyUrl}}" target="_blank">{{formBody.companyUrl_}}</a></td>
           </tr>
   
         <tr>
           <td>Agent</td>
           <td><input class='inp2' type='text' name='formBody.agent'    [(ngModel)]='formBody.agent'    readonly='readonly'/></td>
-          <td><input class='inp3' type='text' name='formBody.agentUrl' [(ngModel)]='formBody.agentUrl' readonly='readonly'/></td>
+          <td><a href="{{formBody.agentUrl}}" target="_blank">{{formBody.agentUrl_}}</a></td>
         </tr>
   
         <tr>
           <td>Poster</td>
           <td><input class='inp2' type='text' name='formBody.poster'    [(ngModel)]='formBody.poster'    readonly='readonly'/></td>
-          <td><input class='inp3' type='text' name='formBody.posterUrl' [(ngModel)]='formBody.posterUrl' readonly='readonly'/></td>
+          <td><a href="{{formBody.posterUrl}}" target="_blank">{{formBody.posterUrl_}}</a></td>
         </tr>
   
         <tr>

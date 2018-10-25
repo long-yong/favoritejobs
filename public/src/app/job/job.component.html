@@ -27,9 +27,10 @@
   
         <tr *ngFor='let obj of allObj'>
           <td  width="30">{{obj.stars}}</td>
+
           <td  width="100">{{obj.company}}</td>
           <td  width="60">{{obj.agent}}</td>
-          <td  width="60">{{obj.poster}}</td>
+          <td  width="60"> <a href="{{obj.posterUrl}}" target="_blank">{{obj.poster}}</a></td>
           <td  width="60">{{obj.industry}}</td>
           <td  width="120">{{obj.title}}</td>
           <td  width="70">{{obj.jobId}}</td>
