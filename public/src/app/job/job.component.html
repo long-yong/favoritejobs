@@ -7,21 +7,37 @@
 
   <br><br><br>
   
+    <div id='box'>
+
     <table border='1'>
         <tr>
-          <th  width="120">Name</th>
-          <th  width="100">Type</th>
-          <th  width="115">Action</th>
+          <th  width="30">Stars</th>
+          <th  width="105">Company</th>
+          <th  width="40">Agent</th>
+          <th  width="40">Poster</th>
+          <th  width="40">Industry</th>
+          <th  width="110">Job Title</th>
+          <th  width="60">Job ID</th>
+          <th  width="50">Apply Date</th>
+          <th  width="50">Status</th>
+          <th  width="60">Appoints</th>
+          <th  width="60">Contact</th>
+          <th  width="80">Action</th>
         </tr>
   
         <tr *ngFor='let obj of allObj'>
-          <td>
-            {{obj.name}}
-          </td>
-          <td>
-            {{obj.type}}
-          </td>
-          <td>
+          <td  width="30">{{obj.stars}}</td>
+          <td  width="105">{{obj.company}}</td>
+          <td  width="40">{{obj.agent}}</td>
+          <td  width="40">{{obj.poster}}</td>
+          <td  width="40">{{obj.industry}}</td>
+          <td  width="110">{{obj.title}}</td>
+          <td  width="60">{{obj.jobId}}</td>
+          <td  width="50">{{obj.applyDate}}</td>
+          <td  width="50">{{obj.status}}</td>
+          <td  width="60">{{obj.appoints}}</td>
+          <td  width="60">{{obj.contact}}</td>
+          <td  width="80">
               <a class='click' (click)="clickView(obj._id)"> Detail </a>
               <a class='click' (click)="clickEdit(obj._id)"> Edit </a>
               <a class='click' (click)="clickDel(obj._id)"> Del  </a>
@@ -29,6 +45,8 @@
         </tr>
   
       </table>
+
+    </div>
       
 
 </div>

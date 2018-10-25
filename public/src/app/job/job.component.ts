@@ -46,11 +46,9 @@ export class JobComponent implements OnInit {
   deloneFromAllobj(id:any) {
     for(let i=0; i<this.allObj.length;i++) {
       if(this.allObj[i]['_id']==id) {
-        for(let j=i; j<this.allObj.length-1; j++)  {
-          this.allObj[i] = this.allObj[i+1];
-        } 
-        this.allObj.pop(); break;
-      }
+        this.allObj.splice(i,1);
+        break;
+      } 
     }
   }
 

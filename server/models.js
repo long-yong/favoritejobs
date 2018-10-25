@@ -61,6 +61,12 @@ var JobSchema = new mongoose.Schema({
     salary:{
         type:String,
     },
+    title:{
+        type:String,
+    },
+    jobId:{
+        type:String,
+    },
     applyDate:{
         type:String,
     },
