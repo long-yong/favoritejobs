@@ -6,7 +6,7 @@
 
   <br> <br>
   
-    <form (submit)="onSubmitNew()">
+    <form (submit)="onSubmit()">
   
       <div class='box1'>
 
@@ -18,86 +18,85 @@
         </tr>
 
         <tr>
-          <td>Name</td>
-          <td><input class='inp2' type='text' name='formBody.name' [(ngModel)]='formBody.name'/></td>
-          <td><input class='inp3' type='text' placeholder='url'/></td>
+          <td>Stars</td>
+          <td><input class='inp2' type='text' name='formBody.stars' [(ngModel)]='formBody.stars'/></td>
+        </tr>
+
+        <tr>
+          <td>Company</td>
+          <td><input class='inp2' type='text' name='formBody.company'    [(ngModel)]='formBody.company'    placeholder='name'/></td>
+          <td><input class='inp3' type='text' name='formBody.companyUrl' [(ngModel)]='formBody.companyUrl' placeholder='url'/></td>
         </tr>
 
       <tr>
-        <td>Type</td>
-        <td><input class='inp2' type='text' name='formBody.type' [(ngModel)]='formBody.type'/></td>
-        <td><input class='inp3' type='text' placeholder='url'/></td>
+        <td>Agent</td>
+        <td><input class='inp2' type='text' name='formBody.agent'    [(ngModel)]='formBody.agent'/></td>
+        <td><input class='inp3' type='text' name='formBody.agentUrl' [(ngModel)]='formBody.agentUrl'/></td>
       </tr>
 
       <tr>
-        <td>Desc</td>
-        <td><input class='inp2' type='text' name='formBody.description' [(ngModel)]='formBody.description'/></td>
-        <td><input class='inp3' type='text' placeholder='url'/></td>
+        <td>Poster</td>
+        <td><input class='inp2' type='text' name='formBody.poster'    [(ngModel)]='formBody.poster'/></td>
+        <td><input class='inp3' type='text' name='formBody.posterUrl' [(ngModel)]='formBody.posterUrl'/></td>
       </tr>
 
       <tr>
-        <td>Skills</td>
-        <td><input class='inp2' type='text' name='formBody.skill1' [(ngModel)]='formBody.skill1'/></td>
-        <td><input class='inp3' type='text' placeholder='url'/></td>
-      </tr>
-
-      <tr>
-        <td>Name</td>
-        <td><input class='inp2' type='text' name='formBody.skill2' [(ngModel)]='formBody.skill2'/></td>
+        <td>Industry</td>
+        <td><input class='inp2' type='text' name='formBody.industry' [(ngModel)]='formBody.industry'/></td>
       </tr>
   
       <tr>
-        <td>Name</td>
-        <td><input class='inp2' type='text' name='formBody.skill3' [(ngModel)]='formBody.skill3'/></td>
+        <td>Location</td>
+        <td><input class='inp2' type='text' name='formBody.location' [(ngModel)]='formBody.location'/></td>
       </tr>
 
       <tr>
-        <td>Name</td>
-        <td><input class='inp2' type='text' name='formBody.skill3' [(ngModel)]='formBody.skill3'/></td>
+        <td>Salary</td>
+        <td><input class='inp2' type='text' name='formBody.salary' [(ngModel)]='formBody.salary'/></td>
       </tr>
 
       <tr>
-        <td>Name</td>
-        <td><input class='inp2' type='text' name='formBody.skill3' [(ngModel)]='formBody.skill3'/></td>
+        <td>Applydate</td>
+        <td><input class='inp2' type='text' name='formBody.applyDate' [(ngModel)]='formBody.applyDate'/></td>
       </tr>
 
       <tr>
-        <td>Name</td>
-        <td><input class='inp2' type='text' name='formBody.skill3' [(ngModel)]='formBody.skill3'/></td>
+        <td>Status</td>
+        <td><input class='inp2' type='text' name='formBody.status' [(ngModel)]='formBody.status'/></td>
       </tr>
 
       <tr>
-        <td>Name</td>
-        <td><input class='inp2' type='text' name='formBody.skill3' [(ngModel)]='formBody.skill3'/></td>
+        <td>Appoints</td>
+        <td><input class='inp2' type='text' name='formBody.appoints' [(ngModel)]='formBody.appoints'/></td>
       </tr>   
       
       <tr>
-        <td>Name</td>
-        <td><input class='inp2' type='text' name='formBody.skill3' [(ngModel)]='formBody.skill3'/></td>
+        <td>Contact</td>
+        <td><input class='inp2' type='text' name='formBody.contact' [(ngModel)]='formBody.contact'/></td>
       </tr>   
       
       <tr>
-        <td>Name</td>
-        <td><input class='inp2' type='text' name='formBody.skill3' [(ngModel)]='formBody.skill3'/></td>
-      </tr>    
+        <td>Others</td>
+        <td><input class='inp2' type='text' name='formBody.others' [(ngModel)]='formBody.others'/></td>
+      </tr>
 
     </table>
 
     </div>
 
     <div class='box2'>
-      <textarea class='jobpost' name='jobPost' placeholder='Job Post'></textarea>
+      <textarea class='jobpost' name='jobPost' [(ngModel)]='formBody.jobPost' placeholder='Job Post'></textarea>
     </div>
     
     <div class='box3'>
-      <textarea class='info' name='companyInfo' placeholder='Company Info'></textarea>
+      <textarea class='info' name='companyInfo' [(ngModel)]='formBody.companyInfo' placeholder='Company Info'></textarea>
       <br>
-      <textarea class='cv' name='tailoredCv' placeholder='Tailored CV'></textarea>
+      <textarea class='cv' name='resume' [(ngModel)]='formBody.resume' placeholder='Tailored CV'></textarea>
     </div>
 
     <br><br>
 
-    <div class='wide30'></div> <button type='submit'>Add a Job</button>
+    <div class='wide70'></div> <button type='submit'>Add a Job</button>
     <div class='wide10'></div> <button type='reset' (click)="clickCancel()">Cancel</button>
 
     </form>

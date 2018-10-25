@@ -33,7 +33,7 @@ export class NewjobComponent implements OnInit {
     this.clearFormErr();
   }
 
-  onSubmitNew() {
+  onSubmit() {
     this.newObj(this.formBody);
   }
 

@@ -1,62 +1,99 @@
 <div id='container'>
   
-  <h2>Job details</h2>
-  <a class='menu' [routerLink]="['/job']">Home</a><div class='wide20'></div> 
-  <a class='menu' [routerLink]="['/login']">Log out</a>
+    <h2>Job Details</h2>
+    <a class='menu' [routerLink]="['/job']">Home</a>
   
-  <br><br><br>
-
-    <table>
-
-      <tr>
-        <td> Pet Name: </td>
-        <td>  <input type="text" name="formBody.name" [(ngModel)]="formBody.name" readonly='readonly'/> </td>
-      </tr>
-
-      <tr>
-        <td> Type: </td>
-        <td> <input type="text" name="formBody.type" [(ngModel)]="formBody.type" readonly='readonly'/> </td>
-      </tr>
-
-      <tr>
-        <td> Description: &nbsp; &nbsp; </td>
-        <td> <input type="text" name="formBody.description" [(ngModel)]="formBody.description" readonly='readonly'/> </td>
-      </tr>
-
-      <tr>
-        <td> Skills:  </td>
-        <td> <input type="text" name="formBody.skill1" [(ngModel)]="formBody.skill1" readonly='readonly'/> </td>
-      </tr>
-
-      <tr>
-        <td>  </td>
-        <td> <input type="text" name="formBody.skill2" [(ngModel)]="formBody.skill2" readonly='readonly'/> </td>
-      </tr>
-
-      <tr>
-        <td>  </td>
-        <td> <input type="text" name="formBody.skill3" [(ngModel)]="formBody.skill3" readonly='readonly'/> </td>
-      </tr>
-
-      <tr>
-          <td>&nbsp;</td>
-          <td>&nbsp;</td>
-      </tr>
-
-      <tr>
-          <td>&nbsp;</td>
-          <td>&nbsp;</td>
-      </tr>
-
-      <tr>
-        <td></td>
-        <td>
-            <button (click)="clickCancel()">Cancel</button><div class='wide8'></div>
-            <button (click)="clickDelete()">Delete this job!</button>
-        </td>
-      </tr>
-
-    </table> 
+    <br> <br>
+    
+        <div class='box1'>
   
-
-</div>
+        <table>
+  
+          <tr>
+              <td></td>
+              <td><input class='inp2' type='text' name='formBody.email' [(ngModel)]='formBody.email'/></td>
+          </tr>
+  
+          <tr>
+            <td>Stars</td>
+            <td><input class='inp2' type='text' name='formBody.stars' [(ngModel)]='formBody.stars' readonly='readonly'/></td>
+          </tr>
+  
+          <tr>
+            <td>Company</td>
+            <td><input class='inp2' type='text' name='formBody.company'    [(ngModel)]='formBody.company'    readonly='readonly'/></td>
+            <td><input class='inp3' type='text' name='formBody.companyUrl' [(ngModel)]='formBody.companyUrl' readonly='readonly'/></td>
+          </tr>
+  
+        <tr>
+          <td>Agent</td>
+          <td><input class='inp2' type='text' name='formBody.agent'    [(ngModel)]='formBody.agent'    readonly='readonly'/></td>
+          <td><input class='inp3' type='text' name='formBody.agentUrl' [(ngModel)]='formBody.agentUrl' readonly='readonly'/></td>
+        </tr>
+  
+        <tr>
+          <td>Poster</td>
+          <td><input class='inp2' type='text' name='formBody.poster'    [(ngModel)]='formBody.poster'    readonly='readonly'/></td>
+          <td><input class='inp3' type='text' name='formBody.posterUrl' [(ngModel)]='formBody.posterUrl' readonly='readonly'/></td>
+        </tr>
+  
+        <tr>
+          <td>Industry</td>
+          <td><input class='inp2' type='text' name='formBody.industry' [(ngModel)]='formBody.industry' readonly='readonly'/></td>
+        </tr>
+    
+        <tr>
+          <td>Location</td>
+          <td><input class='inp2' type='text' name='formBody.location' [(ngModel)]='formBody.location' readonly='readonly'/></td>
+        </tr>
+  
+        <tr>
+          <td>Salary</td>
+          <td><input class='inp2' type='text' name='formBody.salary' [(ngModel)]='formBody.salary' readonly='readonly'/></td>
+        </tr>
+  
+        <tr>
+          <td>Applydate</td>
+          <td><input class='inp2' type='text' name='formBody.applyDate' [(ngModel)]='formBody.applyDate' readonly='readonly'/></td>
+        </tr>
+  
+        <tr>
+          <td>Status</td>
+          <td><input class='inp2' type='text' name='formBody.status' [(ngModel)]='formBody.status' readonly='readonly'/></td>
+        </tr>
+  
+        <tr>
+          <td>Appoints</td>
+          <td><input class='inp2' type='text' name='formBody.appoints' [(ngModel)]='formBody.appoints' readonly='readonly'/></td>
+        </tr>   
+        
+        <tr>
+          <td>Contact</td>
+          <td><input class='inp2' type='text' name='formBody.contact' [(ngModel)]='formBody.contact' readonly='readonly'/></td>
+        </tr>   
+        
+        <tr>
+          <td>Others</td>
+          <td><input class='inp2' type='text' name='formBody.others' [(ngModel)]='formBody.others' readonly='readonly'/></td>
+        </tr>
+  
+      </table>
+  
+      </div>
+  
+      <div class='box2'>
+        <textarea class='jobpost' name='jobPost' [(ngModel)]='formBody.jobPost' placeholder='Job Post' readonly='readonly'></textarea>
+      </div>
+      
+      <div class='box3'>
+        <textarea class='info' name='companyInfo' [(ngModel)]='formBody.companyInfo' placeholder='Company Info' readonly='readonly'></textarea>
+        <br>
+        <textarea class='cv' name='resume' [(ngModel)]='formBody.resume' placeholder='Tailored CV' readonly='readonly'></textarea>
+      </div>
+  
+      <br><br>
+  
+      <div class='wide65'></div> <button  (click)="clickDelete()">Delete this job</button>
+      <div class='wide10'></div> <button  (click)="clickCancel()">Cancel</button>
+  
+  </div>

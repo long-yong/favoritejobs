@@ -46,10 +46,10 @@ var JobSchema = new mongoose.Schema({
     agentUrl:{
         type:String,
     },
-    source:{
+    poster:{
         type:String,
     },
-    sourceUrl:{
+    posterUrl:{
         type:String,
     },
     industry:{
@@ -67,7 +67,7 @@ var JobSchema = new mongoose.Schema({
     status:{
         type:String,
     },    
-    appointment:{
+    appoints:{
         type:String,
     },
     contact:{

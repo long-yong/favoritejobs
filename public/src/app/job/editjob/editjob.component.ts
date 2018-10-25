@@ -40,7 +40,7 @@ export class EditjobComponent implements OnInit {
     });
   }
 
-  onSubmitEdit() {
+  onSubmit() {
     this.editObj(this.curId,this.formBody);
   }
   

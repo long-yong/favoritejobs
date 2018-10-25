@@ -16,7 +16,7 @@ const routes: Routes = [
   { path: '', pathMatch: 'full', redirectTo: '/job' },
 
   { path: 'login',component:RegisterComponent },
-  { path: 'login/users',component:UserlistComponent },
+  { path: 'login/user/ccad@myccad.com',component:UserlistComponent },
 
   { path: 'job',component:JobComponent },
   { path: 'job/newjob',component: NewjobComponent },

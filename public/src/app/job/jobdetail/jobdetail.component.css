@@ -1,5 +1,5 @@
 #container {
-    width:900px;
+    width:950px;
     height:550px;
     padding-left:30px;
     border: 1px solid black;
@@ -8,46 +8,66 @@
     font-size: 12px;
 }
 
-#box {
-    width:400px;
-    height:350px;
+.box1 {
+    width:300px;
+    height:400px;
     border: 1px solid white;
     vertical-align: top;
     text-align: left;
-    padding-left: 10px;
+    display: inline-block;
+}
+
+.box2 {
+    width:330px;
+    height:400px;
+    border: 1px solid white;
+    vertical-align: top;
+    text-align: left;
+    display: inline-block;
+}
+
+.box3 {
+    width:280px;
+    height:400px;
+    border: 1px solid white;
+    vertical-align: top;
+    text-align: left;
+    display: inline-block;
 }
 
 .inline {
     display:inline-block;
 }
 
-p {
-    font-size: 12px;
-}
-
-button {
-    margin-top:3px;
-    margin-right:6px;
-    margin-bottom:6px;
+.jobpost {
+    width:305px;
+    height:395px;
     font-size: 10px;
-    border-radius:5px;
-}
-
-input {
-    font-size: 10px;
-    border:1px solid white;
-}
-
-a {
-    padding-left:6px;
-}
-
-.errs {
-    padding-left:0px;
-    font-size: 12px;
     font-style:italic;
+    display: block;
+    overflow-x:hidden;
+    overflow-y:scroll;     
 }
 
+.info {
+    width:270px;
+    height:180px;
+    font-size: 10px;
+    font-style:italic;
+    display: block;
+    overflow-x:hidden;
+    overflow-y:scroll; 
+}
+
+.cv {
+    width:270px;
+    height:190px;
+    font-size: 10px;
+    font-style:italic;
+    display: block;
+    overflow-x:hidden;
+    overflow-y:scroll; 
+}
 
 .wide2   { width:  2px;  height:10px; display:inline-block; }
 .wide4   { width:  4px;  height:10px; display:inline-block; }
@@ -61,6 +81,7 @@ a {
 .wide40  { width:  40px; height:10px; display:inline-block; }
 .wide50  { width:  50px; height:10px; display:inline-block; }
 .wide60  { width:  60px; height:10px; display:inline-block; }
+.wide65  { width:  65px; height:10px; display:inline-block; }
 .wide70  { width:  70px; height:10px; display:inline-block; }
 .wide80  { width:  80px; height:10px; display:inline-block; }
 .wide90  { width:  90px; height:10px; display:inline-block; }
@@ -91,8 +112,72 @@ a {
 .high80  { height: 80px; width: 10px; display: block; }
 .high100  { height:100px; width: 10px;display: block; }
 
+.errs {
+    padding-left:0px;
+    font-size: 12px;
+    font-style:italic;
+    color:red;
+}
+
 .menu {
     font-size: 14px;
     font-weight: bold;
     color: green;
 }
+
+p {
+    font-size: 12px;
+}
+
+a {
+    padding-left:6px;
+}
+
+input {
+    font-size: 10px;
+    margin: 5px 0px 5px 0px;
+    border: 1px solid white;
+}
+
+button {
+    margin: 3px 6px 6px 0px;
+    font-size: 10px;
+    border-radius:5px;
+}
+
+table {
+    border-collapse:collapse;
+    border: 0px solid black;
+    cellspacing: 0px;
+    line-height: 16px;
+    align:left;
+}
+
+th{
+    font-size: 12px;
+    line-height: 16px;
+}
+
+td{
+    font-size: 12px;
+    line-height: 16px;
+    text-align: left;
+    padding-left: 5px;
+    padding-right: 5px;
+    overflow:hidden;
+    text-overflow:ellipsis;
+    white-space:nowrap;
+}
+
+.inp2{
+    width:145px;
+}
+
+.inp3{
+    width:60px;
+}
+
+.underline {
+    text-decoration:underline;
+}
+
