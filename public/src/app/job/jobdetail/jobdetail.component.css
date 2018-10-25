@@ -1,6 +1,6 @@
 #container {
     width:900px;
-    height:485px;
+    height:550px;
     padding-left:30px;
     border: 1px solid black;
     vertical-align: top;
@@ -39,7 +39,7 @@ input {
 }
 
 a {
-    padding-left:12px;
+    padding-left:6px;
 }
 
 .errs {
@@ -90,3 +90,9 @@ a {
 .high60  { height: 60px; width: 10px; display: block; }
 .high80  { height: 80px; width: 10px; display: block; }
 .high100  { height:100px; width: 10px;display: block; }
+
+.menu {
+    font-size: 14px;
+    font-weight: bold;
+    color: green;
+}

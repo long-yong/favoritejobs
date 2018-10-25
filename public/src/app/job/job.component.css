@@ -1,6 +1,6 @@
 #container {
     width:900px;
-    height:485px;
+    height:550px;
     padding-left:30px;
     border: 1px solid black;
     vertical-align: top;
@@ -16,19 +16,12 @@ p {
     font-size: 12px;
 }
 
-button {
-    margin-top:3px;
-    margin-right:6px;
-    margin-bottom:6px;
-    font-size: 10px;
-}
-
 input {
     font-size: 10px;
 }
 
 a {
-    padding-left:12px;
+    padding-left:6px;
 }
 
 .errs {
@@ -58,18 +51,19 @@ table {
     border-collapse:collapse;
     border: 0px solid black;
     cellspacing: 0px;
-    line-height: 12px;
+    line-height: 20px;
     align:left;
 }
 
 th{
-    font-size: 10px;
-    line-height: 16px;
+    font-size: 12px;
+    line-height: 20px;
+    padding-left: 5px;
 }
 
 td{
     font-size: 12px;
-    line-height: 16px;
+    line-height: 20px;
     text-align: left;
     padding-left: 5px;
     padding-right: 5px;
@@ -78,6 +72,20 @@ td{
     white-space:nowrap;
 }
 
+.menu {
+    font-size: 14px;
+    font-weight: bold;
+    color: green;
+}
+
 .underline {
+    text-decoration:underline;
+    font-size: 14px;
+    font-weight: bold;
+    color: green;
+}
+
+.click {
+    font-size: 12px;
     text-decoration:underline;
 }

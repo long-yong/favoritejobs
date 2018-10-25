@@ -6,7 +6,7 @@ function errArr(err) {
     let arr = [];
     for(var key in err.errors) arr.push (err.errors[key].message);
     newarr = []; for(var i=arr.length-1; i>=0; i--) newarr.push(arr[i]);
-    if(newarr.length==0) newarr.push('This name is existed, input a new name!');
+    if(newarr.length==0) newarr.push('Name already exists, input a new one.');
     return newarr;
 }
 

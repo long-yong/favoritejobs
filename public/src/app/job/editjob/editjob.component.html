@@ -1,11 +1,10 @@
 <div id='container'>
   
   <h2>Edit a job </h2>
-  <a [routerLink]="['/job']">Home</a>
+  <a class='menu' [routerLink]="['/job']">Home</a><div class='wide20'></div>
+  <a class='errs' *ngFor='let err of formErr'> {{err}} <br> </a> <br>
 
   <br><br>
-
-    <a class='errs' *ngFor='let err of formErr'> {{err}} <br> </a> <br>
   
     <form class='inline' (submit)="onSubmitEdit()">
 

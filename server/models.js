@@ -8,8 +8,8 @@ mongoose.connect('mongodb://localhost/test', {useNewUrlParser:true},
 var JobSchema = new mongoose.Schema({
     name:{
         type:String,
-        unique:[true,"This name existed, give a new name!"],
         required: true,
+        unique:true,
     },
     type:{
         type:String,
@@ -18,13 +18,13 @@ var JobSchema = new mongoose.Schema({
     description:{
         type:String,
     },
-    skill1:{ 
+    skill1:{
         type:String,
     },
-    skill2:{ 
+    skill2:{
         type:String,
     },
-    skill3:{ 
+    skill3:{
         type:String,
     },
     likes:{

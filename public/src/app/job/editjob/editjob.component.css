@@ -1,6 +1,6 @@
 #container {
-    width:900px;
-    height:485px;
+    width:950px;
+    height:550px;
     padding-left:30px;
     border: 1px solid black;
     vertical-align: top;
@@ -8,43 +8,36 @@
     font-size: 12px;
 }
 
-#box {
-    width:400px;
-    height:350px;
+.box1 {
+    width:300px;
+    height:400px;
     border: 1px solid grey;
     vertical-align: top;
     text-align: left;
-    padding-left: 50px;
+    display: inline-block;
 }
+
+.box2 {
+    width:300px;
+    height:400px;
+    border: 1px solid grey;
+    vertical-align: top;
+    text-align: left;
+    display: inline-block;
+}
+
+.box3 {
+    width:300px;
+    height:400px;
+    border: 1px solid grey;
+    vertical-align: top;
+    text-align: left;
+    display: inline-block;
+}
+
 
 .inline {
     display:inline-block;
-}
-
-p {
-    font-size: 12px;
-}
-
-button {
-    margin-top:3px;
-    margin-right:6px;
-    margin-bottom:6px;
-    font-size: 10px;
-    border-radius:5px;
-}
-
-input {
-    font-size: 10px;
-}
-
-a {
-    padding-left:12px;
-}
-
-.errs {
-    padding-left:0px;
-    font-size: 12px;
-    font-style:italic;
 }
 
 .wide2   { width:  2px;  height:10px; display:inline-block; }
@@ -88,3 +81,71 @@ a {
 .high60  { height: 60px; width: 10px; display: block; }
 .high80  { height: 80px; width: 10px; display: block; }
 .high100  { height:100px; width: 10px;display: block; }
+
+.errs {
+    padding-left:0px;
+    font-size: 12px;
+    font-style:italic;
+}
+
+.menu {
+    font-size: 14px;
+    font-weight: bold;
+    color: green;
+}
+
+p {
+    font-size: 12px;
+}
+
+a {
+    padding-left:6px;
+}
+
+input {
+    font-size: 10px;
+    margin: 2px 0px 2px 0px;
+}
+
+button {
+    margin: 3px 6px 6px 0px;
+    font-size: 10px;
+    border-radius:5px;
+}
+
+table {
+    border-collapse:collapse;
+    border: 0px solid black;
+    cellspacing: 0px;
+    line-height: 12px;
+    align:left;
+}
+
+th{
+    font-size: 10px;
+    line-height: 16px;
+}
+
+td{
+    font-size: 12px;
+    line-height: 16px;
+    text-align: left;
+    padding-left: 5px;
+    padding-right: 5px;
+    overflow:hidden;
+    text-overflow:ellipsis;
+    white-space:nowrap;
+}
+
+.inp2{
+    width:160px;
+}
+
+.inp3{
+    width:50px;
+}
+
+.underline {
+    text-decoration:underline;
+}
+

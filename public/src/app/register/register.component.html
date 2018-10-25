@@ -1,0 +1,92 @@
+<div id='container'>
+  
+  <h2 class='inline'>Job Search Helper</h2> <div class='wide50'></div>  <a class='menu' [routerLink]="['/job']">All Jobs</a>  <br>
+  
+  <a class='menu'>Register</a> 
+  
+  
+  <br>
+  
+  <div class='box1'>
+
+    <div class='high5'></div>
+    <a class='errs' *ngFor='let err of formErr'>{{err}}<br></a>
+    <div class='high5'></div>
+
+    <form (submit)="onSubmitReg()"> <table>
+      <tr>
+        <td>Name</td>
+        <td><input class='inp' type="text" name="formBody.name" [(ngModel)]="formBody.name"/></td>
+      </tr>
+
+      <tr>
+        <td>Type</td>
+        <td><input class='inp' type="text" name="formBody.type" [(ngModel)]="formBody.type"/></td>
+      </tr>
+
+      <tr>
+        <td>Desc</td>
+        <td><input class='inp' type="text" name="formBody.description" [(ngModel)]="formBody.description"/></td>
+      </tr>
+
+      <tr>
+        <td>Skill1</td>
+        <td><input class='inp' type="text" name="formBody.skill1" [(ngModel)]="formBody.skill1"/></td>
+      </tr>
+
+      <tr>
+        <td>Skill2</td>
+        <td><input class='inp' type="text" name="formBody.skill2" [(ngModel)]="formBody.skill2"/></td>
+      </tr>
+  
+      <tr>
+        <td></td>
+        <td></td>
+      </tr>   
+      
+      <tr>
+        <td></td>
+        <td><button type="submit">Register</button></td>
+      </tr>
+
+    </table></form>
+  </div>
+
+  <br><br>
+
+  <a class='menu'>Login</a> <br>
+
+  <div class='box1'>
+
+      <div class='high5'></div>
+      <a class='errs' *ngFor='let err of formErr'>{{err}}<br></a>
+      <div class='high5'></div>
+
+      <form (submit)="onSubmitReg()"> <table>
+        <tr>
+          <td>Name</td>
+          <td><input class='inp' type="text" name="formBody.name" [(ngModel)]="formBody.name"/></td>
+        </tr>
+  
+        <tr>
+          <td>Type</td>
+          <td><input class='inp' type="text" name="formBody.type" [(ngModel)]="formBody.type"/></td>
+        </tr>
+    
+        <tr>
+          <td></td>
+          <td></td>
+        </tr>   
+        
+        <tr>
+          <td></td>
+          <td><button type="submit">Login</button></td>
+        </tr>
+  
+      </table></form>
+    </div>
+
+</div>
+
+    
+  

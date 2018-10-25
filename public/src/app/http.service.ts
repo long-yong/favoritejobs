@@ -8,10 +8,18 @@ import { HttpClient } from '@angular/common/http';
 
 export class HttpService {
 
-  constructor(private _http: HttpClient){ }
+  loginUser  = 'Yong Long';
+  loginEmail = 'ccad@myccad.com';
 
-  // pet
+  constructor(private _http: HttpClient) { }
 
+  // login
+  user()                  { return this.loginUser;   }
+  email()                 { return this.loginEmail;  }
+  setLogin(user,email)    { this.loginUser=user; this.loginEmail=email;  }
+  setLogout()             { this.loginUser='';   this.loginEmail='';     }
+
+  // job
   allJob()                { return this._http.get('/alljob');            }
   oneJob(id:any)          { return this._http.get('/onejob/'+id);        }
   newJob(body:any)        { return this._http.post('/newjob',    body);  }

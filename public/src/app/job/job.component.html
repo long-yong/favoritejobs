@@ -1,9 +1,9 @@
 <div id='container'>
   
-  <h2>Yong's favorite jobs</h2>
-  <a [routerLink]="['/job/newjob']">Add a favorite job</a> <div class='wide20'></div>
-
-  <a class='underline' (click)="clickSort()">Sort Type</a>
+  <h2>{{user}}'s favorite jobs</h2>
+  <a class='menu' [routerLink]="['/job/newjob']">Add a favorite job</a> <div class='wide20'></div>
+  <a class='underline' (click)="clickSort()">Sort Type</a><div class='wide20'></div>
+  <a class='menu' [routerLink]="['/login']">Log out</a>
 
   <br><br><br>
   
@@ -22,9 +22,9 @@
             {{obj.type}}
           </td>
           <td>
-              <button class='inline' (click)="clickView(obj._id)"> Detail </button>
-              <button class='inline' (click)="clickEdit(obj._id)"> Edit </button>
-              <button class='inline' (click)="clickDel(obj._id)"> Del  </button>
+              <a class='click' (click)="clickView(obj._id)"> Detail </a>
+              <a class='click' (click)="clickEdit(obj._id)"> Edit </a>
+              <a class='click' (click)="clickDel(obj._id)"> Del  </a>
           </td>
         </tr>
   
