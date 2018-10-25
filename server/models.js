@@ -9,19 +9,23 @@ var UserSchema = new mongoose.Schema({
     firstName:{
         type:String,
         required: [true, 'First Name is required.' ],
+        minlength: 2,
     },
     lastName:{
         type:String,
         required: [true, 'Last Name is required.' ],
+        minlength: 2,
     },
     email:{
         type:String,
         required: [true, 'Email is required.' ],
         unique: true,
+        minlength: 6,
     },
     password:{
         type:String,
         required: [true, 'Password is required.' ],
+        minlength: 6,
     },
 }, {timestamps:true});
 

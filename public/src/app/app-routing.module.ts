@@ -13,7 +13,7 @@ import { UserlistComponent } from './register/userlist/userlist.component';
 
 const routes: Routes = [
 
-  { path: '', pathMatch: 'full', redirectTo: '/job' },
+  { path: '', pathMatch: 'full', redirectTo: '/login' },
 
   { path: 'login',component:RegisterComponent },
   { path: 'login/ccad@myccad.com',component:UserlistComponent },
