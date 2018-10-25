@@ -11,6 +11,11 @@ module.exports = function(app) {
     app.use(bp.urlencoded({extended:true}));
     app.use(bp.json());
 
+    app.get('/alluser',                 controller.allUser);
+    app.post('/newuser',                controller.newUser);
+    app.post('/chkuser',                controller.chkUser);
+    app.get('/deluser/:id',             controller.delUser);
+
     app.get('/alljob',                  controller.allJob);
     app.get('/onejob/:id',              controller.oneJob);
     app.post('/newjob',                 controller.newJob);

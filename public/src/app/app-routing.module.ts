@@ -9,12 +9,14 @@ import { JobComponent } from './job/job.component';
 import { NewjobComponent } from './job/newjob/newjob.component';
 import { EditjobComponent } from './job/editjob/editjob.component';
 import { JobdetailComponent } from './job/jobdetail/jobdetail.component';
+import { UserlistComponent } from './register/userlist/userlist.component';
 
 const routes: Routes = [
 
-  { path: '', pathMatch: 'full', redirectTo: '/login' },
+  { path: '', pathMatch: 'full', redirectTo: '/job' },
 
   { path: 'login',component:RegisterComponent },
+  { path: 'login/users',component:UserlistComponent },
 
   { path: 'job',component:JobComponent },
   { path: 'job/newjob',component: NewjobComponent },

@@ -1,7 +1,7 @@
 <div id='container'>
   
   <h2>Add a favorite job</h2>
-  <a class='menu' [routerLink]="['/job']">Home</a> <div class='wide20'></div> 
+  <a class='menu' [routerLink]="['/job']">Home</a> <div class='wide260'></div> 
   <a class='errs' *ngFor='let err of formErr'> {{err}} &nbsp; &nbsp;</a>
 
   <br> <br>
@@ -12,10 +12,10 @@
 
       <table>
 
-          <tr>
-              <td></td>
-              <td><input class='inp2' type='text' name='formBody.email' [(ngModel)]='formBody.email'/></td>
-            </tr>
+        <tr>
+            <td></td>
+            <td><input class='inp2' type='text' name='formBody.email' [(ngModel)]='formBody.email'/></td>
+        </tr>
 
         <tr>
           <td>Name</td>

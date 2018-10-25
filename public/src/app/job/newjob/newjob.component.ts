@@ -20,18 +20,17 @@ export class NewjobComponent implements OnInit {
   constructor(private _httpService:HttpService,private _route:ActivatedRoute,private _router:Router){}
   logout()        { if(this.email=='') return true; return false; }
   notErr(err:any) { if(err==undefined||err==null) return true; return false;  }  
-  clearObj()      {  }
 
   clearFormErr()  {
     this.formErr=null;
     this.formBody = { };
+    this.formBody['email'] = this.email;
   }
   
   ngOnInit() {
     this.user=this._httpService.user();
     this.email=this._httpService.email();
     this.clearFormErr();
-    this.clearObj();
   }
 
   onSubmitNew() {

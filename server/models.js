@@ -5,37 +5,94 @@ const mongoose = require('mongoose');
 mongoose.connect('mongodb://localhost/test', {useNewUrlParser:true},
                  (errs)=>errs ? console.log(errs):console.log('db is good to go'));
 
+var UserSchema = new mongoose.Schema({
+    firstName:{
+        type:String,
+        required: [true, 'First Name is required.' ],
+    },
+    lastName:{
+        type:String,
+        required: [true, 'Last Name is required.' ],
+    },
+    email:{
+        type:String,
+        required: [true, 'Email is required.' ],
+        unique: true,
+    },
+    password:{
+        type:String,
+        required: [true, 'Password is required.' ],
+    },
+}, {timestamps:true});
+
+
 var JobSchema = new mongoose.Schema({
-    name:{
-        type:String,
-        required: true,
-        unique:true,
-    },
-    type:{
+    email:{
         type:String,
         required: true,
     },
-    description:{
+    stars:{
+        type:String,
+    },    
+    company:{
         type:String,
     },
-    skill1:{
+    companyUrl:{
         type:String,
     },
-    skill2:{
+    agent:{
         type:String,
     },
-    skill3:{
+    agentUrl:{
         type:String,
     },
-    likes:{
-        type:Number,
-        default:0,
+    source:{
+        type:String,
+    },
+    sourceUrl:{
+        type:String,
+    },
+    industry:{
+        type:String,
+    },
+    location:{
+        type:String,
+    },
+    salary:{
+        type:String,
+    },
+    applyDate:{
+        type:String,
+    },
+    status:{
+        type:String,
+    },    
+    appointment:{
+        type:String,
+    },
+    contact:{
+        type:String,
+    },
+    others:{
+        type:String,
+    },    
+
+    jobPost:{
+        type:String,
+        required: [true, 'Job Post is required.' ],
+    },
+    companyInfo:{
+        type:String,
+    },
+    resume:{
+        type:String,
     },
     
 }, {timestamps:true});
 
 
 module.exports = {
-    Job:      mongoose.model('Job',      JobSchema),
+    User:     mongoose.model('User',     UserSchema),
+    Job:      mongoose.model('Job',      JobSchema),    
 }
 

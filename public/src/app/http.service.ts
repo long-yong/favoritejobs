@@ -19,6 +19,13 @@ export class HttpService {
   setLogin(user,email)    { this.loginUser=user; this.loginEmail=email;  }
   setLogout()             { this.loginUser='';   this.loginEmail='';     }
 
+  // user
+  allUser()               { return this._http.get('/alluser');           }
+  newUser(body:any)       { return this._http.post('/newuser',   body);  }
+  chkUser(body:any)       { return this._http.post('/chkuser',   body);  }
+  delUser(id:any)         { return this._http.get('/deluser/'+id);       }
+
+
   // job
   allJob()                { return this._http.get('/alljob');            }
   oneJob(id:any)          { return this._http.get('/onejob/'+id);        }

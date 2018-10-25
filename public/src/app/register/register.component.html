@@ -1,8 +1,10 @@
 <div id='container'>
   
-  <h2 class='inline'>Job Search Helper</h2> <div class='wide50'></div>  <a class='menu' [routerLink]="['/job']">All Jobs</a>  <br>
+  <h2>Job Search Helper</h2>   
   
-  <a class='menu'>Register</a> 
+  <a class='menu'>Register</a> <div class='wide100'></div>
+  <a class='menu' [routerLink]="['/job']">All Jobs</a> <div class='wide20'></div> 
+  <a class='menu' [routerLink]="['/login/users']">All Users</a> 
   
   
   <br>
@@ -15,28 +17,28 @@
 
     <form (submit)="onSubmitReg()"> <table>
       <tr>
-        <td>Name</td>
-        <td><input class='inp' type="text" name="formBody.name" [(ngModel)]="formBody.name"/></td>
+        <td>First Name</td>
+        <td><input class='inp' type="text" name="formBody.firstName" [(ngModel)]="formBody.firstName"/></td>
       </tr>
 
       <tr>
-        <td>Type</td>
-        <td><input class='inp' type="text" name="formBody.type" [(ngModel)]="formBody.type"/></td>
+        <td>Last Name</td>
+        <td><input class='inp' type="text" name="formBody.lastName" [(ngModel)]="formBody.lastName"/></td>
       </tr>
 
       <tr>
-        <td>Desc</td>
-        <td><input class='inp' type="text" name="formBody.description" [(ngModel)]="formBody.description"/></td>
+        <td>Email</td>
+        <td><input class='inp_' type="text" name="formBody.email" [(ngModel)]="formBody.email"/></td>
       </tr>
 
       <tr>
-        <td>Skill1</td>
-        <td><input class='inp' type="text" name="formBody.skill1" [(ngModel)]="formBody.skill1"/></td>
+        <td>Password</td>
+        <td><input class='inp' type="password" name="formBody.password" [(ngModel)]="formBody.password"/></td>
       </tr>
 
       <tr>
-        <td>Skill2</td>
-        <td><input class='inp' type="text" name="formBody.skill2" [(ngModel)]="formBody.skill2"/></td>
+        <td>Password Cfm</td>
+        <td><input class='inp' type="password" name="formBody.passwordCfm" [(ngModel)]="formBody.passwordCfm"/></td>
       </tr>
   
       <tr>
@@ -59,24 +61,24 @@
   <div class='box1'>
 
       <div class='high5'></div>
-      <a class='errs' *ngFor='let err of formErr'>{{err}}<br></a>
+      <a class='errs' *ngFor='let err of formErr2'>{{err}}<br></a>
       <div class='high5'></div>
 
-      <form (submit)="onSubmitReg()"> <table>
+      <form (submit)="onSubmitLogin()"> <table>
         <tr>
-          <td>Name</td>
-          <td><input class='inp' type="text" name="formBody.name" [(ngModel)]="formBody.name"/></td>
+          <td>Email</td>
+          <td><input class='inp_' type="text" name="formBody2.email" [(ngModel)]="formBody2.email"/></td>
         </tr>
   
         <tr>
-          <td>Type</td>
-          <td><input class='inp' type="text" name="formBody.type" [(ngModel)]="formBody.type"/></td>
+          <td>Password &nbsp; &nbsp; &nbsp; &nbsp;</td>
+          <td><input class='inp' type="text" name="formBody2.password" [(ngModel)]="formBody2.password"/></td>
         </tr>
     
         <tr>
           <td></td>
           <td></td>
-        </tr>   
+        </tr>
         
         <tr>
           <td></td>

@@ -1,12 +1,15 @@
 // controller.js
 
-const { Job } = require('./models')
+const { User, Job } = require('./models')
 
-function errArr(err) {
+function errArr(err,model) {
     let arr = [];
     for(var key in err.errors) arr.push (err.errors[key].message);
     newarr = []; for(var i=arr.length-1; i>=0; i--) newarr.push(arr[i]);
-    if(newarr.length==0) newarr.push('Name already exists, input a new one.');
+    if(newarr.length==0) {
+        if(model==User) newarr.push('Email already exists, input a new email.');
+        else            newarr.push('Name already exists, input a new name.');
+    }
     return newarr;
 }
 
@@ -23,7 +26,7 @@ function one_obj(req,res,model) {
 function new_obj(req,res,model) {
      model.create(req.body)
     .then(data=>{ res.json({oneObj:data}); })
-    .catch(err=>{ res.json({errArr:errArr(err)}); });
+    .catch(err=>{ res.json({errArr:errArr(err,model)}); });
 }
 
 function del_obj(req,res,model) {
@@ -36,13 +39,23 @@ function del_obj(req,res,model) {
 function up_obj(req,res,model) {
     model.findByIdAndUpdate(req.params.id, req.body, {new:true,runValidators:true})
     .then(data=>{ res.json({oneObj:data}); })
-    .catch(err=>{ res.json({errArr:errArr(err)}); })
+    .catch(err=>{ res.json({errArr:errArr(err,model)}); })
 }
 
 module.exports = {
 
-    //  job
+    //  user
+    allUser:(req,res)=>{ all_obj(req,res,User); },
+    newUser:(req,res)=>{ new_obj(req,res,User); },
+    delUser:(req,res)=>{ del_obj(req,res,User); },
+    chkUser:(req,res)=>{
+        console.log('3... ');
+        User.find({email:req.body.email, password:req.body.password})
+        .then(data=>{ res.json({oneObj:data}); })
+        .catch(err=>{ res.json({errArr:errArr(err,User)}); })
+    },
 
+    // job
     allJob:(req,res)=>{ all_obj(req,res,Job); },
     oneJob:(req,res)=>{ one_obj(req,res,Job); },
     newJob:(req,res)=>{ new_obj(req,res,Job); },

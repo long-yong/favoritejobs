@@ -1,0 +1,33 @@
+<div id='container'>
+  
+    <h2>All Users</h2>
+    <a class='menu' [routerLink]="['/login']">Log out</a>
+  
+    <br><br><br>
+    
+      <table border='1'>
+          <tr>
+            <th  width="60">First name</th>
+            <th  width="60">Last Name</th>
+            <th  width="80">Email</th>
+            <th  width="80">Action</th>
+          </tr>
+    
+          <tr *ngFor='let obj of allObj'>
+            <td>
+              {{obj.firstName}}
+            </td>
+            <td>
+              {{obj.lastName}}
+            </td>
+            <td>
+              {{obj.email}}
+            </td>
+            <td>
+                <a class='click' (click)="clickDel(obj._id)"> Delete </a>
+            </td>
+          </tr>
+    
+        </table>
+        
+  </div>
