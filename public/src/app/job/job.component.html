@@ -12,32 +12,32 @@
     <table border='1'>
         <tr>
           <th  width="30">Stars</th>
-          <th  width="105">Company</th>
-          <th  width="40">Agent</th>
-          <th  width="40">Poster</th>
-          <th  width="40">Industry</th>
-          <th  width="110">Job Title</th>
-          <th  width="60">Job ID</th>
-          <th  width="50">Apply Date</th>
-          <th  width="50">Status</th>
-          <th  width="60">Appoints</th>
-          <th  width="60">Contact</th>
-          <th  width="80">Action</th>
+          <th  width="100">Company</th>
+          <th  width="60">Agent</th>
+          <th  width="60">Poster</th>
+          <th  width="60">Industry</th>
+          <th  width="120">Job Title</th>
+          <th  width="70">Job ID</th>
+          <th  width="55">Apply Date</th>
+          <th  width="70">Status</th>
+          <th  width="100">Appoints</th>
+          <th  width="100">Contact</th>
+          <th  >Action</th>
         </tr>
   
         <tr *ngFor='let obj of allObj'>
           <td  width="30">{{obj.stars}}</td>
-          <td  width="105">{{obj.company}}</td>
-          <td  width="40">{{obj.agent}}</td>
-          <td  width="40">{{obj.poster}}</td>
-          <td  width="40">{{obj.industry}}</td>
-          <td  width="110">{{obj.title}}</td>
-          <td  width="60">{{obj.jobId}}</td>
-          <td  width="50">{{obj.applyDate}}</td>
-          <td  width="50">{{obj.status}}</td>
-          <td  width="60">{{obj.appoints}}</td>
-          <td  width="60">{{obj.contact}}</td>
-          <td  width="80">
+          <td  width="100">{{obj.company}}</td>
+          <td  width="60">{{obj.agent}}</td>
+          <td  width="60">{{obj.poster}}</td>
+          <td  width="60">{{obj.industry}}</td>
+          <td  width="120">{{obj.title}}</td>
+          <td  width="70">{{obj.jobId}}</td>
+          <td  width="55">{{obj.applyDate}}</td>
+          <td  width="70">{{obj.status}}</td>
+          <td  width="100">{{obj.appoints}}</td>
+          <td  width="100">{{obj.contact}}</td>
+          <td  >
               <a class='click' (click)="clickView(obj._id)"> Detail </a>
               <a class='click' (click)="clickEdit(obj._id)"> Edit </a>
               <a class='click' (click)="clickDel(obj._id)"> Del  </a>

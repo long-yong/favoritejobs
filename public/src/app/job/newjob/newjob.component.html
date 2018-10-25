@@ -1,7 +1,7 @@
 <div id='container'>
   
   <h2>Add a favorite job</h2>
-  <a class='menu' [routerLink]="['/job']">Home</a> <div class='wide260'></div> 
+  <a class='menu' [routerLink]="['/job']">Home</a> <div class='wide290'></div> 
   <a class='errs' *ngFor='let err of formErr'> {{err}} &nbsp; &nbsp;</a>
 
   <br> <br>
@@ -14,7 +14,7 @@
 
         <tr>
             <td></td>
-            <td><input class='inp2' type='text' name='formBody.email' [(ngModel)]='formBody.email'/></td>
+            <td><input class='inp0' type='text' name='formBody.email' [(ngModel)]='formBody.email'/></td>
         </tr>
 
         <tr>
@@ -67,7 +67,7 @@
       </tr>
 
       <tr>
-        <td>Applydate</td>
+        <td>Apply Date</td>
         <td><input class='inp2' type='text' name='formBody.applyDate' [(ngModel)]='formBody.applyDate'/></td>
       </tr>
 
@@ -100,15 +100,15 @@
     </div>
     
     <div class='box3'>
-      <textarea class='info' name='companyInfo' [(ngModel)]='formBody.companyInfo' placeholder='Company Info'></textarea>
+      <textarea class='info' name='info' [(ngModel)]='formBody.info' placeholder='Additional Info'></textarea>
       <br>
       <textarea class='cv' name='resume' [(ngModel)]='formBody.resume' placeholder='Tailored CV'></textarea>
     </div>
 
     <br><br>
 
-    <div class='wide70'></div> <button type='submit'>Add a Job</button>
-    <div class='wide10'></div> <button type='reset' (click)="clickCancel()">Cancel</button>
+    <div class='wide80'></div> <button type='submit'>&nbsp;Add a Job&nbsp;</button>
+    <div class='wide20'></div> <button type='reset' (click)="clickCancel()">Cancel</button>
 
     </form>
 

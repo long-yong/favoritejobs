@@ -49,7 +49,11 @@ export class RegisterComponent implements OnInit {
     obs.subscribe(data => {
       this.formErr = data['errArr'];
         if(this.notErr(this.formErr)) {
-          this._router.navigate(['/login/users']);
+          let oneObj = data['oneObj'];
+          let name = oneObj.firstName+' '+oneObj.lastName;
+          let email = oneObj.email;
+          this._httpService.setLogin(name,email);
+          this._router.navigate(['/job']);
         }
     });
   }

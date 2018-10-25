@@ -1,11 +1,19 @@
 #container {
-    width:350px;
+    width:550px;
     height:550px;
     padding-left:30px;
     border: 1px solid black;
     vertical-align: top;
     text-align: left;
     font-size: 12px;
+}
+
+#box {
+    width:520px;
+    height:419px;
+    border: 1px solid white;
+    overflow-x:hidden;
+    overflow-y:scroll;
 }
 
 .inline {

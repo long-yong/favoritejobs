@@ -87,7 +87,7 @@ var JobSchema = new mongoose.Schema({
         type:String,
         required: [true, 'Job Post is required.' ],
     },
-    companyInfo:{
+    info:{
         type:String,
     },
     resume:{
