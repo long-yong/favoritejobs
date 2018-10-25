@@ -2,7 +2,6 @@
   
   <h2>{{user}}'s favorite jobs</h2>
   <a class='menu' [routerLink]="['/job/newjob']">Add a favorite job</a> <div class='wide20'></div>
-  <a class='underline' (click)="clickSort()">Sort Type</a><div class='wide20'></div>
   <a class='menu' [routerLink]="['/login']">Log out</a>
 
   <br><br><br>
@@ -22,7 +21,7 @@
           <th  width="70">Status</th>
           <th  width="100">Appoints</th>
           <th  width="100">Contact</th>
-          <th  >Action</th>
+          <th  class='black'>Action</th>
         </tr>
   
         <tr *ngFor='let obj of allObj'>

@@ -56,7 +56,10 @@ module.exports = {
     },
 
     // job
-    allJob:(req,res)=>{ all_obj(req,res,Job); },
+    allJob:(req,res)=>{
+        Job.find({email:req.params.email})
+        .then(data=>{ res.json({allObj:data}); });
+    },
     oneJob:(req,res)=>{ one_obj(req,res,Job); },
     newJob:(req,res)=>{ new_obj(req,res,Job); },
     delJob:(req,res)=>{ del_obj(req,res,Job); },

@@ -59,12 +59,6 @@ export class JobComponent implements OnInit {
     });
   }
 
-  clickSort() {
-    let obs = this._httpService.allJobSorted();
-    obs.subscribe(data => {
-      this.allObj = data['allObj'];
-    });
-  }
 
 }
 

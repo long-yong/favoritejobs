@@ -27,7 +27,7 @@ export class HttpService {
 
 
   // job
-  allJob()                { return this._http.get('/alljob');            }
+  allJob()                { return this._http.get('/alljob/'+this.loginEmail); }
   oneJob(id:any)          { return this._http.get('/onejob/'+id);        }
   newJob(body:any)        { return this._http.post('/newjob',    body);  }
   upJob(id:any,body:any)  { return this._http.post('/upjob/'+id, body);  }

@@ -24,12 +24,12 @@ p {
     font-size: 12px;
 }
 
-input {
-    font-size: 10px;
-}
-
 a {
     padding-left:6px;
+}
+
+input {
+    font-size: 10px;
 }
 
 .errs {
@@ -70,6 +70,7 @@ th{
     line-height: 20px;
     padding-left: 5px;
     text-align: center;
+    color:rgb(57,124,185);
 }
 
 td{
@@ -87,17 +88,21 @@ td{
 .menu {
     font-size: 14px;
     font-weight: bold;
-    color: green;
+    color: rgb(57,124,185);;
 }
 
 .underline {
     text-decoration:underline;
     font-size: 14px;
     font-weight: bold;
-    color: green;
+    color: rgb(57,124,185);
 }
 
 .click {
     font-size: 10px;
     text-decoration:underline;
+}
+
+.black {
+    color:black;
 }

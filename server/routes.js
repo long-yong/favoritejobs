@@ -16,7 +16,7 @@ module.exports = function(app) {
     app.post('/chkuser',                controller.chkUser);
     app.get('/deluser/:id',             controller.delUser);
 
-    app.get('/alljob',                  controller.allJob);
+    app.get('/alljob/:email',           controller.allJob);
     app.get('/onejob/:id',              controller.oneJob);
     app.post('/newjob',                 controller.newJob);
     app.post('/upjob/:id',              controller.upJob);
