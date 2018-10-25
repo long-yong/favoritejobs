@@ -37,9 +37,9 @@ export class JobdetailComponent implements OnInit {
     let obs = this._httpService.oneJob(id);
     obs.subscribe(data => {
       this.formBody = data['oneObj'];
-      if(this.formBody.companyUrl!='') this.formBody.companyUrl_='URL:'; else this.formBody.companyUrl_='';
-      if(this.formBody.agentUrl!='')   this.formBody.agentUrl_  ='URL:'; else this.formBody.agentUrl_  ='';
-      if(this.formBody.posterUrl!='')  this.formBody.posterUrl_ ='URL:'; else this.formBody.posterUrl_ ='';
+      if(this.formBody.companyUrl!=undefined) this.formBody.companyUrl_='URL:'; else this.formBody.companyUrl_ = this.formBody.companyUrl;
+      if(this.formBody.agentUrl  !=undefined) this.formBody.agentUrl_  ='URL:'; else this.formBody.agentUrl_   = this.formBody.agentUrl;  
+      if(this.formBody.posterUrl !=undefined) this.formBody.posterUrl_ ='URL:'; else this.formBody.posterUrl_  = this.formBody.posterUrl;
     });
   }
 
