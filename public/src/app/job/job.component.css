@@ -106,3 +106,8 @@ td{
 .black {
     color:black;
 }
+
+.sort {
+    padding-left:0px;
+    text-decoration:underline;
+}
