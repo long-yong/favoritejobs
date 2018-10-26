@@ -49,7 +49,6 @@ module.exports = {
     newUser:(req,res)=>{ new_obj(req,res,User); },
     delUser:(req,res)=>{ del_obj(req,res,User); },
     chkUser:(req,res)=>{
-        console.log('3... ');
         User.find({email:req.body.email, password:req.body.password})
         .then(data=>{ res.json({oneObj:data}); })
         .catch(err=>{ res.json({errArr:errArr(err,User)}); })

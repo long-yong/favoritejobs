@@ -10,17 +10,17 @@
 
     <table border='1'>
         <tr>
-          <th  width="30"><a class='sort'>Stars</a></th>
-          <th  width="100"><a class='sort'>Company</a></th>
-          <th  width="60"><a class='sort'>Agent</a></th>
-          <th  width="60"><a class='sort'>Supplier</a></th>
-          <th  width="60"><a class='sort'>Industry</a></th>
-          <th  width="120"><a class='sort'>Job Title</a></th>
-          <th  width="70"><a class='sort'>Job ID</a></th>
-          <th  width="55"><a class='sort'>Apply Date</a></th>
-          <th  width="70"><a class='sort'>Status</a></th>
-          <th  width="100"><a class='sort'>Appoints</a></th>
-          <th  width="100"><a class='sort'>Contact</a></th>
+          <th  width="30"> <a class='sort' (click)="clickSort('stars')"    >Stars</a></th>
+          <th  width="100"><a class='sort' (click)="clickSort('company')"  >Company</a></th>
+          <th  width="60"> <a class='sort' (click)="clickSort('agent')"    >Agent</a></th>
+          <th  width="60"> <a class='sort' (click)="clickSort('supplier')" >Supplier</a></th>
+          <th  width="60"> <a class='sort' (click)="clickSort('industry')" >Industry</a></th>
+          <th  width="120"><a class='sort' (click)="clickSort('title')"    >Job Title</a></th>
+          <th  width="70"> <a class='sort' (click)="clickSort('jobId')"    >Job ID</a></th>
+          <th  width="55"> <a class='sort' (click)="clickSort('applyDate')">Apply Date</a></th>
+          <th  width="70"> <a class='sort' (click)="clickSort('status')"   >Status</a></th>
+          <th  width="100"><a class='sort' (click)="clickSort('appoints')" >Appoints</a></th>
+          <th  width="100"><a class='sort' (click)="clickSort('contact')"  >Contact</a></th>
           <th  class='black'>Action</th>
         </tr>
   
