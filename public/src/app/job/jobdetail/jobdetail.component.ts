@@ -19,13 +19,14 @@ export class JobdetailComponent implements OnInit {
   formErr:  any;
 
   constructor(private _httpService:HttpService,private _route:ActivatedRoute,private _router:Router){}
-  logout()        { if(this.email=='') return true; return false; }
+  logout()        { if(this.email=='') { this._router.navigate(['/login']); return true; } else return false; }
   notErr(err:any) { if(err==undefined||err==null) return true; return false;  }
   clearFormErr()  { this.formErr=null;  this.formBody = { name:""}; }
 
   ngOnInit() {
     this.user=this._httpService.user();
     this.email=this._httpService.email();
+    if(this.logout()) return;
     this.clearFormErr();
     this._route.params.subscribe((params:Params)=>{
       this.curId =  params['id'];
@@ -37,9 +38,9 @@ export class JobdetailComponent implements OnInit {
     let obs = this._httpService.oneJob(id);
     obs.subscribe(data => {
       this.formBody = data['oneObj'];
-      if(this.formBody.companyUrl!=undefined) this.formBody.companyUrl_='URL:'; else this.formBody.companyUrl_ = this.formBody.companyUrl;
-      if(this.formBody.agentUrl  !=undefined) this.formBody.agentUrl_  ='URL:'; else this.formBody.agentUrl_   = this.formBody.agentUrl;  
-      if(this.formBody.posterUrl !=undefined) this.formBody.posterUrl_ ='URL:'; else this.formBody.posterUrl_  = this.formBody.posterUrl;
+      if(this.formBody.companyUrl  !=undefined) this.formBody.companyUrl_  ='URL:'; else this.formBody.companyUrl_   = this.formBody.companyUrl;
+      if(this.formBody.agentUrl    !=undefined) this.formBody.agentUrl_    ='URL:'; else this.formBody.agentUrl_     = this.formBody.agentUrl;  
+      if(this.formBody.supplierUrl !=undefined) this.formBody.supplierUrl_ ='URL:'; else this.formBody.supplierUrl_  = this.formBody.supplierUrl;
     });
   }
 

@@ -50,10 +50,10 @@ var JobSchema = new mongoose.Schema({
     agentUrl:{
         type:String,
     },
-    poster:{
+    supplier:{
         type:String,
     },
-    posterUrl:{
+    supplierUrl:{
         type:String,
     },
     industry:{

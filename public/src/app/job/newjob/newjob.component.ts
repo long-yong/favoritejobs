@@ -18,7 +18,7 @@ export class NewjobComponent implements OnInit {
   formErr:  any;
   
   constructor(private _httpService:HttpService,private _route:ActivatedRoute,private _router:Router){}
-  logout()        { if(this.email=='') return true; return false; }
+  logout()        { if(this.email=='') { this._router.navigate(['/login']); return true; } else return false; }
   notErr(err:any) { if(err==undefined||err==null) return true; return false;  }  
 
   clearFormErr()  {
@@ -30,6 +30,7 @@ export class NewjobComponent implements OnInit {
   ngOnInit() {
     this.user=this._httpService.user();
     this.email=this._httpService.email();
+    if(this.logout()) return;
     this.clearFormErr();
   }
 
@@ -38,7 +39,6 @@ export class NewjobComponent implements OnInit {
   }
 
   newObj(body){
-    if(this.logout()) return;
     let obs = this._httpService.newJob(body);
     obs.subscribe(data => {
       this.formErr = data['errArr'];

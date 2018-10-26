@@ -8,8 +8,8 @@ import { HttpClient } from '@angular/common/http';
 
 export class HttpService {
 
-  loginUser  = 'Nobody';
-  loginEmail = 'nobody@test.com';
+  loginUser  = '';
+  loginEmail = '';
 
   constructor(private _http: HttpClient) { }
 

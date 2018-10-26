@@ -17,18 +17,18 @@ export class JobComponent implements OnInit {
   allObj: any;
 
   constructor(private _httpService:HttpService,private _route:ActivatedRoute,private _router:Router){}
-  logout()    { if(this.email=='') return true; return false; }
+  logout()    { if(this.email=='') { this._router.navigate(['/login']); return true; } else return false; }
   clearObj()  { this.allObj=null;  }
   
   ngOnInit()  {
     this.user=this._httpService.user();
     this.email=this._httpService.email();
+    if(this.logout()) return;
     this.clearObj();
     this.getAll();
   }
 
   getAll() {
-    if(this.logout()) return;
     let obs = this._httpService.allJob();
     obs.subscribe(data => {
       this.allObj = data['allObj'];

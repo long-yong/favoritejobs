@@ -19,13 +19,14 @@ export class EditjobComponent implements OnInit {
   formErr:  any;
 
   constructor(private _httpService:HttpService,private _route:ActivatedRoute,private _router:Router){}
-  logout()        { if(this.email=='') return true; return false; }
+  logout()        { if(this.email=='') { this._router.navigate(['/login']); return true; } else return false; }
   notErr(err:any) { if(err==undefined||err==null) return true; return false; }
   clearFormErr()  { this.formErr=null;  this.formBody = { name:""}; }
 
   ngOnInit() {
     this.user=this._httpService.user();
     this.email=this._httpService.email();
+    if(this.logout()) return;
     this.clearFormErr();
     this._route.params.subscribe((params:Params)=>{
       this.curId =  params['id'];
