@@ -17,6 +17,7 @@ cmd: git remote add origin https://github.com/long-yong/petshelter.git
 VSC: commit and push
 
 
+
 // 2. Create AWS instance
 Ubuntu 16.04 LTS / t2.micro
 Set security settings:
@@ -24,12 +25,20 @@ ssh 0.0.0.0, (Anywhere or myIP)
 http 0.0.0.0 (Anywhere)
 https 0.0.0.0 (Anywhere, or don't set it)
 
- instance ID: i-0db984a2956d93350
- DNS: ec2-18-221-110-84.us-east-2.compute.amazonaws.com
- public IP: 18.221.110.84
- Private IPs 172.31.37.224
- Key: aws-pem-rsa
 
+// 2.1 for petshelter project
+Key: aws-pem-rsa
+instance ID: i-0db984a2956d93350
+DNS: ec2-18-221-110-84.us-east-2.compute.amazonaws.com
+Private IPs 172.31.37.224
+public IP: 18.221.110.84
+ 
+
+// 2.2 for favoritejobs project
+Key: aws-pem-rsa
+DNS: ec2-18-223-160-107.us-east-2.compute.amazonaws.com
+private ID: 172.31.44.206
+public ID: 18.223.160.107
 
 
 // 3. Connect to AWS server
@@ -38,8 +47,7 @@ cmd (just as user not as adminstrator)
 cmd: cd .ssh
 cmd: bash
 $:  chmod 400 aws-pem-rsa.pem
-$:  ssh -i aws-pem-rsa.pem ubuntu@ec2-18-221-110-84.us-east-2.compute.amazonaws.com
-
+$:  ssh -i aws-pem-rsa.pem ubuntu@ec2-18-223-160-107.us-east-2.compute.amazonaws.com
 
 
 //4. install dependency
@@ -64,11 +72,11 @@ $: sudo apt-get install nginx git -y
 
 
 
-// 5: colone petshelter project
+// 5: colone favoritejobs project
 
 $: cd /var/www
 
-$: sudo git clone https://github.com/long-yong/petshelter.git
+$: sudo git clone https://github.com/long-yong/favoritejobs.git
 
 
 
@@ -76,7 +84,7 @@ $: sudo git clone https://github.com/long-yong/petshelter.git
 
 $: cd /etc/nginx/sites-available
 
-$: sudo vim petshelter     (hotkey: i,esc,wq)
+$: sudo vim favoritejobs     (hotkey: i,esc,wq)
 
 // Add the following code to the file: http://{{PRIVATE-IP}}:{{NODE-PROJECT-PORT}};
 // {{ here is PRIVATE-IP}}:8000
@@ -84,7 +92,7 @@ $: sudo vim petshelter     (hotkey: i,esc,wq)
 server {
     listen 80;
     location / {
-        proxy_pass http://172.31.37.224:8000;  
+        proxy_pass http://172.31.44.206:8000;
         proxy_http_version 1.1;
         proxy_set_header Upgrade $http_upgrade;
         proxy_set_header Connection 'upgrade';
@@ -95,7 +103,7 @@ server {
 
 $: sudo rm default
 
-$: sudo ln -s /etc/nginx/sites-available/petshelter /etc/nginx/sites-enabled/petshelter
+$: sudo ln -s /etc/nginx/sites-available/favoritejobs /etc/nginx/sites-enabled/favoritejobs
 
 $: sudo rm /etc/nginx/sites-enabled/default
 
@@ -107,10 +115,10 @@ $: sudo rm /etc/nginx/sites-enabled/default
 $: sudo npm install pm2 -g
 
 $: cd /var/www
-$: sudo chown -R ubuntu petshelter
+$: sudo chown -R ubuntu favoritejobs
 
 
-$: cd petshelter
+$: cd favoritejobs
 $: npm install    // if err then run $: sudo npm install  
 $: cd public      // angular project name, we usually call it public
 $: npm install    // if err then run $: sudo npm install 
@@ -119,25 +127,27 @@ $: ng build
 
 
 
-// 8: MongoDB  // https://docs.mongodb.com/manual/tutorial/install-mongodb-on-ubuntu/#create-a-list-file-for-mongodb
-(current path:  cd /var/www/petshelter/public)
+// 8: MongoDB  please see   https://docs.mongodb.com/manual/tutorial/install-mongodb-on-ubuntu/#create-a-list-file-for-mongodb
+(current path:  cd /var/www/favoritejobs/public)
 
 $: sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv 9DA31620334BD75D9DCB49F368818C72E52529D4
 
 $: echo "deb [ arch=amd64,arm64 ] https://repo.mongodb.org/apt/ubuntu xenial/mongodb-org/4.0 multiverse" | sudo tee /etc/apt/sources.list.d/mongodb-org-4.0.list
 
-
 $: sudo apt-get update
 
-$: sudo apt-get install -y mongodb  // if err then run $: sudo apt-get install -y mongodb-org
+
+$: sudo apt-get install -y mongodb  
+// if next mongod.service not found then replace it as $: sudo apt-get install -y mongodb-org
 
 $: sudo mkdir /data
 
 $: sudo mkdir /data/db
 
-$: sudo service mongod start      // err: unit mongod.service not found
+$: sudo service mongod start      
+// if err > service not found: back step 8 and reinstall mongodb just by -y mongodb-org
 
-$: sudo service mongod status
+$: sudo service mongod status     // ctrl+C
 
 $: sudo systemctl enable mongod && sudo systemctl start mongod
 
@@ -145,7 +155,7 @@ $: sudo systemctl enable mongod && sudo systemctl start mongod
 
 // 9. Start Your server!
 
-$: cd /var/www/petshelter
+$: cd /var/www/favoritejobs
 
 $: pm2 start server.js
 
